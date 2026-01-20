@@ -136,36 +136,36 @@ function ProfileDropdown({
 
   return (
     <>
-      <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border-2 border-gray-200 z-50 animate-slideIn">
-        <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-white">
+    <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border-2 border-gray-200 z-50 animate-slideIn">
+      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-white">
           <p className="text-sm font-bold text-gray-900">{user?.name || ''}</p>
           {user?.email && <p className="text-xs text-gray-500 mt-1">{user.email}</p>}
           {user?.company && <p className="text-xs text-gray-400 mt-0.5">{user.company}</p>}
-        </div>
-        <div className="p-2">
+      </div>
+      <div className="p-2">
           <button 
             onClick={() => {
               onOpenProfileSettings()
             }}
             className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all font-medium"
           >
-            <div className="flex items-center space-x-3">
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              <span>{t('settings.profile')}</span>
-            </div>
-          </button>
-          <div className="border-t border-gray-200 my-2"></div>
-          <button 
-            onClick={handleLogout}
-            className="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-all font-semibold flex items-center space-x-3"
-          >
+          <div className="flex items-center space-x-3">
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-            <span>Sign out</span>
+              <span>{t('settings.profile')}</span>
+          </div>
           </button>
+        <div className="border-t border-gray-200 my-2"></div>
+        <button 
+          onClick={handleLogout}
+          className="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-all font-semibold flex items-center space-x-3"
+        >
+          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          <span>Sign out</span>
+        </button>
         </div>
       </div>
     </>

@@ -3,13 +3,11 @@
 import { useState, useContext } from 'react'
 import { useDashboard } from './DashboardLayout'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { useAuth } from '@/contexts/AuthContext'
 import { useAdminSettings } from '@/contexts/AdminSettingsContext'
 
 export default function DashboardSidebar() {
   const { activePage, setActivePage } = useDashboard()
   const { t } = useLanguage()
-  const { user } = useAuth()
 
   const navItems = [
     {
@@ -48,19 +46,6 @@ export default function DashboardSidebar() {
         </svg>
       ),
     },
-    ...(user?.role === 'admin' || user?.role === 'coadmin'
-      ? [
-          {
-            name: 'CRM',
-            label: t('dashboard.crm'),
-            icon: (
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m8-4a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            ),
-          },
-        ]
-      : []),
   ]
 
   return (
